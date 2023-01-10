@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+    <main class="main main--project">
+        <div>
+            <img 
+            class="hero"
+            src="{{ url_for('static', filename=project['hero']) }}"
+            alt="Uma mão segurando uma caneta, prestes a escrever algo em um planejador de projeto"
+            />
+
+            <article class="project">
+                <article class="project__content">
+                    <h2 class="project__heading">{{ project['name'] }}</h2>
+                    <p>
+                        Olá, eu sou o Laênio! Adoro estudar e aprender a codificar e dominar o desenvolvimento de software.
+                        Eu estudo há mais de 1 ano, e fundei a Black Noise para que eu possa ajudar os outros com o que 
+                        aprendi - meu objetivo é entender tudo o que acontece nos bastidores.
+                    </p>
+                    <p>
+                        A codificação é extremamente gratificante. À medida que você aprende, as coisas começam a fazer sentido.
+                        Você pode juntar os pontos de todas as coisas que não estavam muito claras antes.
+                    </p>
+                </article>
+
+                <section>
+                    <article class="project__meta--group">
+                        <h3 class="project__heading project__heading--meta">Tecnologias usadas</h3>
+                        <ul class="technology-list">
+                            <li class="technology-list__item">Python</li>
+                            <li class="technology-list__item">HTML</li>
+                            <li class="technology-list__item">CSS</li>
+                        </ul>
+                    </article>
+                    <a class="cta" href="{{ project['prod'] }}">
+                        <img class="cta__icon" src="{{ url_for('static', filename='img/pointer.svg' )}}">
+                        Ver em produção
+                    </a>
+                </section>
+            </article>
+        </div>
+    </main>
+{% endblock content %}
